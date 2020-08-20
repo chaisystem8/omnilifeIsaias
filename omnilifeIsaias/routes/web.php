@@ -1,4 +1,5 @@
 <?php
+use App\Employee;
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'EmployeeController@admin')->name('admin');
+// Employee
+Route::resource('admin/employee', 'EmployeeController')->names('admin.employee');
+
+Route::get('cancelar/{ruta}', function($ruta){
+    return redirect()->route($ruta)->with('cancelar','Accíon Cancelada');
+})->name('cancelar');
+

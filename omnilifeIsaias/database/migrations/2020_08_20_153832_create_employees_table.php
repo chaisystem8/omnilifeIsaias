@@ -20,6 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->double('salarioDolores');
             $table->double('salarioPesos');
             $table->string('direccion',40);
+            $table->string('estado',40);
             $table->string('ciudad',40);
             $table->string('telefono',40);
             $table->string('correo',40);
